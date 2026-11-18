@@ -34,7 +34,7 @@ body {
 
 /* Contenitore centrale ottimizzato per la lettura */
 .container {
-  max-width: 720px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2.5rem 0 5rem;
 }
@@ -303,18 +303,18 @@ header {
 /* Stile del contenuto Markdown renderizzato */
 .markdown-body {
   font-family: var(--font-serif);
-  font-size: 1.18rem;
+  font-size: 1rem;
   line-height: 1.72;
   color: var(--text-primary);
 }
 
 .markdown-body p {
-  margin-bottom: 1.35rem;
+  margin-bottom: 1.3rem;
 }
 
 .markdown-body h2 {
   font-family: var(--font-sans);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin: 2.2rem 0 0.85rem;
   letter-spacing: -0.01em;
@@ -322,7 +322,7 @@ header {
 
 .markdown-body h3 {
   font-family: var(--font-sans);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
   margin: 1.6rem 0 0.6rem;
 }
@@ -374,6 +374,11 @@ header {
   color: var(--accent-green);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* =========================================

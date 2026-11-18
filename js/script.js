@@ -212,7 +212,7 @@ function openArticle(id, updateHistory = true) {
     .join("");
 
   // Converte il testo Markdown in HTML pulito tramite marked.js
-  document.getElementById("post-content").innerHTML = marked.parse(article.markdown);
+  document.getElementById("post-content").innerHTML = marked.parse(article.markdown, { breaks: true });
 
   // Cambia vista
   const homeView = document.getElementById("home-view");
