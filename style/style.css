@@ -1,0 +1,395 @@
+/* =========================================
+   VARIABILI COLORE & STILE E-INK / CARTA
+   ========================================= */
+:root {
+  --bg-paper: #EFECE6;
+  --bg-card: #F6F4EF;
+  --bg-card-hover: #FAF9F6;
+  --border-subtle: #D5D0C5;
+  --border-strong: #9E988C;
+  --text-primary: #22211E;
+  --text-secondary: #68645B;
+  --accent-green: #1D634A;
+  --accent-green-bg: #E2ECE7;
+  --font-serif: 'Source Code Pro', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  --font-sans: 'Source Code Pro', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  --radius-card: 10px;
+  --radius-pill: 6px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-paper);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding: 0 1.25rem;
+}
+
+/* Contenitore centrale ottimizzato per la lettura */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 0 5rem;
+}
+
+/* =========================================
+   HEADER & NAVIGAZIONE
+   ========================================= */
+header {
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.site-title {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.site-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-top: 0.4rem;
+}
+
+/* =========================================
+   FILTRO TAG (PILLOLE STILE E-INK)
+   ========================================= */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.85rem;
+  display: block;
+}
+
+.tags-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.25rem;
+}
+
+.tag-btn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.tag-btn:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+  background-color: var(--bg-card);
+}
+
+.tag-btn.active {
+  background-color: var(--accent-green);
+  border-color: var(--accent-green);
+  color: #F6F4EF;
+}
+
+/* =========================================
+   LISTA SCHEDE ARTICOLI (HOME PAGE)
+   ========================================= */
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.article-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 1.35rem 1.5rem;
+  cursor: pointer;
+  transition: transform 0.12s ease, border-color 0.15s ease, background-color 0.15s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.article-card:hover {
+  background-color: var(--bg-card-hover);
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0 0;
+  padding: 1rem 1.5rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+}
+
+.page-btn {
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+  cursor: pointer;
+}
+
+.page-btn:hover:not(:disabled) {
+  background-color: var(--bg-card-hover);
+  border-color: var(--border-strong);
+}
+
+.page-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.page-status {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-title {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.card-meta {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.card-excerpt {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.card-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background-color: var(--bg-paper);
+  border: 1px solid var(--border-subtle);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+}
+
+/* Icona grafica stile "ruota / indicatore" come nello screenshot */
+.card-indicator {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: var(--text-primary);
+  opacity: 0.85;
+}
+
+/* =========================================
+   VISTA SINGOLO ARTICOLO (LETTORE E-INK)
+   ========================================= */
+.article-view {
+  display: none;
+  animation: fadeIn 0.2s ease;
+}
+
+.article-view.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: border-color 0.15s ease;
+}
+
+.back-btn:hover {
+  border-color: var(--border-strong);
+}
+
+.post-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.post-meta-top {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.post-title {
+  font-family: var(--font-serif);
+  font-size: 2.35rem;
+  font-weight: 600;
+  line-height: 1.18;
+  margin-bottom: 1rem;
+}
+
+/* Stile del contenuto Markdown renderizzato */
+.markdown-body {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  line-height: 1.72;
+  color: var(--text-primary);
+}
+
+.markdown-body p {
+  margin-bottom: 1.35rem;
+}
+
+.markdown-body h2 {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 2.2rem 0 0.85rem;
+  letter-spacing: -0.01em;
+}
+
+.markdown-body h3 {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.6rem 0 0.6rem;
+}
+
+.markdown-body ul, .markdown-body ol {
+  margin: 0 0 1.35rem 1.5rem;
+}
+
+.markdown-body li {
+  margin-bottom: 0.4rem;
+}
+
+.markdown-body blockquote {
+  border-left: 3px solid var(--accent-green);
+  background-color: var(--bg-card);
+  padding: 0.85rem 1.2rem;
+  margin: 1.5rem 0;
+  border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.markdown-body code {
+  font-family: var(--font-sans);
+  font-size: 0.9em;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+}
+
+.markdown-body pre {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 1rem;
+  border-radius: var(--radius-card);
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.markdown-body pre code {
+  font-family: var(--font-sans);
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+.markdown-body a {
+  color: var(--accent-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+   ========================================= */
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem 0 3.5rem;
+  }
+  .site-title {
+    font-size: 1.95rem;
+  }
+  .post-title {
+    font-size: 1.85rem;
+  }
+  .article-card {
+    padding: 1.15rem;
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quaderno Digitale — Blog E-Ink</title>
+  
+  <!-- Font Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Libreria leggera per convertire Markdown in HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <div class="top-bar">
+        <span id="header-date">EDIZIONE DIGITALE</span>
+        <span>E-INK READER MODE</span>
+      </div>
+      <h1 class="site-title" onclick="showHome()">Appunti partigiani</h1>
+      <p class="site-subtitle">Sfoghi e riflessioni (poche riflessioni)<p>
+    </header>
+
+    <!-- VISTA HOME: FILTRI TAG + SCHEDE -->
+    <main id="home-view">
+      <span class="section-label">Filtra per argomento</span>
+      <div class="tags-bar" id="tags-container">
+        <!-- Generato dinamicamente via JS -->
+      </div>
+
+      <span class="section-label" id="articles-count-label">Articoli pubblicati</span>
+      <div class="cards-list" id="cards-container">
+        <!-- Schede generate dinamicamente via JS -->
+      </div>
+      <nav class="pagination-controls" id="pagination-controls" aria-label="Paginazione articoli"></nav>
+    </main>
+
+    <!-- VISTA ARTICOLO: CONTENUTO MARKDOWN -->
+    <article id="article-view" class="article-view">
+      <button class="back-btn" onclick="showHome()">
+        ← Torna all'indice
+      </button>
+
+      <div class="post-header">
+        <div class="post-meta-top" id="post-meta"></div>
+        <h1 class="post-title" id="post-title"></h1>
+        <div class="card-footer" id="post-tags"></div>
+      </div>
+
+      <div class="markdown-body" id="post-content"></div>
+    </article>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
