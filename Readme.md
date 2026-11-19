@@ -9,3 +9,6 @@ Fai così:
 3. Lancia `python3 generate_article_pages.py`.
 
 Il generatore toglierà la pagina statica corrispondente e aggiornerà il manifest.
+
+## Attenzione: 
+Modificare un articolo non necessariamente genera un nuovo html, anzi, la generazione va lanciata solo se si rimuovono o aggiungono articoli, perché il contenuto viene comunque preso dal markdown, non c'è una copia nel file dell'articolo statico (vedere il contenuto dell'html in posts per capirsi)
