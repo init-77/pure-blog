@@ -8,6 +8,15 @@ const ARTICLES_PER_PAGE = 8;
 const CONTENT_DIRECTORY_URL = new URL("../content/", document.currentScript.src);
 const ARTICLES_INDEX_URL = new URL("../content/articles.json", document.currentScript.src);
 
+function slugify(value) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 // Icona SVG geometrica ispirata all'indicatore nello screenshot
 const ringIconSVG = `
   <svg class="card-indicator" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -41,6 +50,7 @@ function parseArticle(source, filename) {
     excerpt: metadata.excerpt || metadata.description || "",
     readTime: metadata.readTime || "",
     id: filename.replace(/\.md$/i, ""),
+    slug: slugify(filename.replace(/^\d{8}\s*-\s*/, "").replace(/\.md$/i, "")),
     markdown: match[2]
   };
 }
@@ -69,7 +79,9 @@ async function loadArticles() {
     }
 
     if (document.getElementById("post-content")) {
-      const articleId = new URLSearchParams(window.location.search).get("article");
+      const legacyArticleId = new URLSearchParams(window.location.search).get("article");
+      const pathSlug = window.location.pathname.split("/").filter(Boolean).pop()?.replace(/\.html$/i, "");
+      const articleId = legacyArticleId || articles.find(article => article.slug === pathSlug)?.id;
       if (articleId) {
         openArticle(articleId, false);
       } else {
@@ -195,8 +207,10 @@ function renderPagination(pageCount) {
 }
 
 function openArticlePage(id) {
-  const articleUrl = new URL("article.html", window.location.href);
-  articleUrl.searchParams.set("article", id);
+  const article = articles.find(item => item.id === id);
+  if (!article) return;
+
+  const articleUrl = new URL(`/posts/${encodeURIComponent(article.slug)}.html`, window.location.origin);
   window.location.href = articleUrl;
 }
 
