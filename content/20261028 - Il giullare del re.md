@@ -6,7 +6,6 @@ tags:
 - società
 - media
 ---
-
 La “comicità” di angelo pintus è la massima rappresentazione di quella generazione di italiani impoltroniti, complottisti e proni al governo che incancrenisce la società civile. 
 Al suo spettacolo in prima fila anche andrea pucci perché si sa, chi si somiglia si piglia. 
 Purtroppo sempre in prima fila anche altri comici che mi erano sembrati di maggiore spessore e impegno ma che evidentemente sono legati a pintus da sincera amicizia ed infatti la regia li inquadra mentre si sbellicano dalle risate ed io…boh, cosa devo pensare. 

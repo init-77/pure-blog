@@ -7,7 +7,6 @@ tags:
 - salute
 - lavoro
 ---
-
 Faccio fatica ad addormentarmi poi mi risveglio a metà notte e rifaccio fatica a riaddormentarmi.
 Penso al mio capo che
 - domani mi chiederà di andare in ufficio per parlare con il nuovo collega del Sud Africa. Ma se lui sta in Sud Africa perché devo andare in ufficio? Non posso parlargli da casa?

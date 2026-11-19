@@ -6,7 +6,6 @@ tags:
 - lavoro
 - capitalismo
 ---
-
 ## Domanda onesta a DeepSeek:
 Vorrei che tu immaginassi di essere il capo di un' azienda con tanti dipendenti e dovessi trovare un modo lecito per fare in modo che una buona parte dei lavoratori si licenzino. Non devono essere introdotte pratiche non ammesse...ma cosa potrebbe fare un manager per fare cambiare azienda ai dipendenti? Cose ammesse ma fastidiose che portino le persone a licenziarsi
 

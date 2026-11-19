@@ -5,7 +5,6 @@ date: "2026-11-18"
 tags: ["web", "rss", "indieweb"]
 excerpt: "Come resistere all'avanzata dell'AI"
 ---
-
 ## Prequel
 Vi ricordate il motto di Google all'inizio? "Don't be evil"
 Beh, sappiamo come è andata.
